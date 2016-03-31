@@ -38,11 +38,11 @@ $result = $conn->query($sql);
 $dati = $result->fetch_assoc();
 ?>
 <!-- sono classi predefinite, inverse vuol dire sfondo scuro
-	quella di default � chiara -->
+	quella di default  chiara -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
   
-  <!-- questo � l header contiene gli elementi che devono essere visibili anche quando la barra � minimizzata per i display di piccole dimensioni -->
+  <!-- questo  l header contiene gli elementi che devono essere visibili anche quando la barra  minimizzata per i display di piccole dimensioni -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -75,6 +75,7 @@ $dati = $result->fetch_assoc();
 </nav>
 
 <?php 
+/* dalla pagina di modifica posso essere reindirizzato al menu con un valore di modifica che mi indica se la modifica è avvenuta o ci sono stati degli errori */
 if( isset($_GET['modifica']) )
 {
 	echo "<p id='box_modifica'>";
@@ -107,11 +108,13 @@ if( isset($_GET['modifica']) )
     <div class="col-sm-9">
       <div class="well">
         <h4>La nostra azienda</h4>
+        <!-- Box da recuperaere in db finale -->
         <p>La nostra azienda informazioni su di essa, fondazione, campo di sviluppo, obiettivi. Insomma una breve descrizione </p>
       </div>
       <div class="row">
         <div class="col-sm-4">
           <div class="well">
+          	<!-- nel database non era ancora previsto gli utenti, nel db finale con una query si dovrà poter risalire agli utenti che partecipano all azienda-->
             <h4>Users</h4>
             <p> Utente fondatore <br/> Utente coparticpanete <br/> Utente attivo</p> 
           </div>
@@ -146,6 +149,7 @@ if( isset($_GET['modifica']) )
         </div>
         <div class="col-sm-5">
           <div class="well">
+          	<!-- Nel mio progetto non erano previste le idee, in quello finale con una query si potranno risalire alle idee progetate dall azienda -->
           <h4> Idee</h4>
             <p>GreenCity</p> 
             <p>LoveAffair</p> 
@@ -155,6 +159,7 @@ if( isset($_GET['modifica']) )
       <div class="row">
         <div class="col-sm-8">
           <div class="well">
+          	<!-- altri possibili campi non previsti inizialmente, poichè sicuramente le infromazioni sull azienda saranno maggiori -->
             <p>Text</p> 
           </div>
         </div>
