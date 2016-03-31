@@ -37,11 +37,11 @@ $result = $conn->query($comando);
 $dati = $result->fetch_assoc();
 ?>
 <!-- sono classi predefinite, inverse vuol dire sfondo scuro
-	quella di default � chiara -->
+	quella di default  chiara -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
   
-  <!-- questo � l header contiene gli elementi che devono essere visibili anche quando la barra � minimizzata per i display di piccole dimensioni -->
+  <!-- questo  l header contiene gli elementi che devono essere visibili anche quando la barra  minimizzata per i display di piccole dimensioni -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -51,9 +51,10 @@ $dati = $result->fetch_assoc();
       </button>
       <a class="navbar-brand">Borsa delle Idee</a>
     </div>
- <!--  elementi della barra -->
+ <!--  elementi della barra, ancora tutta da definire -->
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+      	<!-- clicca su home si ritorna nella pagina iniziale dell azienda -->
         <li class="active"><a href="Menu.php">Home</a></li>
         <li><a href="#">About</a></li>
          <li class="dropdown">
@@ -67,6 +68,7 @@ $dati = $result->fetch_assoc();
         <li><a href="#">Contatti</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      	<!-- a destra avreno la glyphicon del logout e cliccandoci ci disconnetteremo e tornare alla pagina del login-->
         <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
@@ -80,6 +82,7 @@ $dati = $result->fetch_assoc();
     <div class="col-sm-offset-2 col-sm-8">
       <div class="well well-lg">
         <h4>Modifica i tuoi dati</h4>
+        <!-- è presente una form con i possibili campi da modificare ed il valore che questi avevano precedentemente che dovranno essere reinviati anche se non modificati-->
       	 <form  method="post" name="registra" action="emodifica.php" id="registra">
 	<table width="300" >
 			<tr>
@@ -110,6 +113,8 @@ $dati = $result->fetch_assoc();
 </form>
 
 <?php 
+// con bootsrap sono presenti degli alert che in questo caso ho utilizzato, quando vengo reindirizzato su questa pagina dalla pagina
+// emodifica, avrò che errore protrà essere 1 o 2 a seconda di quello che si è verificato. SUccessivamente in presenza di controlli più ampi questa parte si potrebbe estendere ancora
 if( isset($_GET['errore']) )
 {
 	echo "<p id='box_errore'> <div class='alert alert-danger'>
@@ -128,6 +133,7 @@ if( isset($_GET['errore']) )
 }
 ?> 
   </div>
+ <!-- mi permette di tornare alla pagina dell azienda-->
 <br/> <p style="text-align: right"><a href='Menu.php'><button> Indietro </button></a></p>
   </div>
 </div>
